@@ -9,7 +9,14 @@
 ;;
 ;;; License: GPLv3
 
-(setq org-post-extensions '(ox-gfm))
+(setq org-post-extensions '(ox-gfm ox-twbs))
+
+(defun org/init-ox-twbs ()
+  (use-package ox-twbs
+    :if org-enable-bootstrap-support
+    :defer t
+    :init
+    ))
 
 (defun org/init-ox-gfm ()
   ;; installing this package from melpa is buggy,
